@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Including JS in HTML</title>
+    <title>The Document Object Model</title>
 
     <meta name="description" content="">
 
@@ -18,7 +18,7 @@
 
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Including JS in HTML">
+    <meta property="og:title" content="The Document Object Model">
     <meta property="og:site_name" content="Introduction to Programming">
     <meta property="og:locale" content="en_GB">
     <meta property="article:author" content="Martin Chorley">
@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@martinjc">
     <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="Including JS in HTML">
+    <meta name="twitter:title" content="The Document Object Model">
 
     <link rel="icon" href="/introduction-to-html-css-js/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Scope+One&display=swap" rel="stylesheet">
@@ -39,19 +39,57 @@
 </header>
     <header>
     <h1> <a href="">
-            Including JS in HTML
+            The Document Object Model
         </a></h1>
 </header>
 
 <div class="container">
     <nav class="sidebar">
         <a href='/introduction-to-html-css-js/'>Home</a>
-        <ul><li><a href="/introduction-to-html-css-js/notes/dom/">Including JS in HTML</a></li><li><a href="/introduction-to-html-css-js/notes/events/">Events</a></li><li><a href="/introduction-to-html-css-js/notes/forms/">Forms</a></li><li><a href="/introduction-to-html-css-js/notes/forms-lab/">Practical Exercise: The JavaScript Debugger</a></li></ul>
+        <ul><li><a href="/introduction-to-html-css-js/notes/dom/">The Document Object Model</a></li><li><a href="/introduction-to-html-css-js/notes/events/">Events</a></li><li><a href="/introduction-to-html-css-js/notes/forms/">Forms</a></li><li><a href="/introduction-to-html-css-js/notes/forms-lab/">Practical Exercise: Forms, Events and the JavaScript Debugger</a></li></ul>
         <a href="/introduction-to-html-css-js/about/">About</a>
     </nav>
 
     <div class="content">
-        
+        <p>We’ll now start to look at how a web browser builds a model of our HTML code in memory (the Document Object Model) and how APIs exist that allow us to manipulate that model to dynamically update our webpage while it is running within the web browser.</p>
+<iframe src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=53cc0550-655b-46d4-bacf-acab0166e72b&v=1" width="720" height="405" style="padding: 0px; border: 1px solid #464646;" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+<p><small>If the embed above does not work here is a <a href="https://cardiff.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=53cc0550-655b-46d4-bacf-acab0166e72b" target="blank">link to the full version of the video</a></small></p>
+<iframe src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9fddfd99-902e-4e75-916c-acac016d17d8&v=1" width="720" height="405" style="padding: 0px; border: 1px solid #464646;" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+<p><small>If the embed above does not work here is a <a href="https://cardiff.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9fddfd99-902e-4e75-916c-acac016d17d8" target="blank">link to the full version of the video</a></small></p>
+<h2>Reading</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">MDN - Introduction to the DOM</a> - A slightly technical look at the DOM API and what it is capable of.</li>
+<li><a href="http://eloquentjavascript.net/14_dom.html">Eloquent JavaScript - Chapter 14</a> - This chapter looks at selecting and modifying the Document Object Model (the HTML structure of our page) using JavaScript.</li>
+</ul>
+<h2>Code Examples</h2>
+<p>There are some example pieces of code for this topic</p>
+<ul>
+<li>Dom Structure <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/dom">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/dom/">[Demo]</a></li>
+<li>Selecting elements using JavaScript:
+<ul>
+<li>by Class <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/select-class">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/select-class/">[Demo]</a></li>
+<li>by ID <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/select-id">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/select-id/">[Demo]</a></li>
+<li>by Tag <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/select-tag">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/select-tag/">[Demo]</a></li>
+<li>by CSS Selector <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/select-css">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/select-css/">[Demo]</a></li>
+</ul>
+</li>
+<li>Using innerHTML
+<ul>
+<li>1 <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/innerHTML/1">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/innerHTML/1/">[Demo]</a></li>
+<li>2 <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/innerHTML/2">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/innerHTML/2/">[Demo]</a></li>
+</ul>
+</li>
+<li>Creating HTML <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/create-html">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/create-html/">[Demo]</a></li>
+<li>Modifying HTML using JavaScript:
+<ul>
+<li>Attributes <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/modify-attributes">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/modify-attributes/">[Demo]</a></li>
+<li>Style 1 <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/modify-style/1">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/modify-style/1">[Demo]</a></li>
+<li>Style 2 <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/modify-style/2">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/modify-style/2">[Demo]</a></li>
+<li>Class <a href="https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/modify-class">[Code]</a> <a href="https://martinjc.github.io/introduction-to-html-css-js/examples/modify-class/">[Demo]</a></li>
+</ul>
+</li>
+</ul>
+
         <div class="nextprev"><p class="next">Next: <a href="/introduction-to-html-css-js/notes/events/">Events</a></p>
         </div>
         <div class="comments">

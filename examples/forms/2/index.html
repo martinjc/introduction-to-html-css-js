@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>JavaScript, Events and DOM</title>
+    </head>
+
+    <body>
+        <p>Hello <span id="name-output"></span></p>
+        <form>
+            <label for="name-input">Enter your name:</label>
+            <input type="text" name="" id="name-input" />
+            <input type="button" value="Submit" id="submit-button" />
+        </form>
+        <script type="text/javascript">
+            function sayHello(name) {
+                let textSpan = document.getElementById("name-output");
+                textSpan.innerHTML = "";
+                let nameText = document.createTextNode(name);
+                textSpan.appendChild(nameText);
+            }
+
+            let submitButton = document.getElementById("submit-button");
+            console.log(submitButton);
+            submitButton.addEventListener("click", function() {
+                let nameInput = document.getElementById("name-input");
+                sayHello(nameInput.value);
+            });
+        </script>
+    </body>
+</html>
