@@ -44,45 +44,45 @@ Reload the page, and enter a number in the prompt box when requested. Pay attent
 
 Lets use the debugger to see what's going on and try to figure out why we are getting the wrong answer. In the Developer Tools window in Google Chrome, click on the 'Sources' tab. in the left-hand pane you can see all the files that make up your webpage - in this case 'index.html'. This may already be selected, but if not select this file, and the source code will appear in the middle pane.
 
-![Developer Tools and the Debugger]({{ "img/browser-debugger.png" | url}})
+![Developer Tools and the Debugger]({{ "/img/browser-debugger.png" | url}})
 
 In order to see what is going on, we need to set a 'breakpoint'. A breakpoint allows us to pause our code at a particular point, or during a particular event. We can then have a look at the internal **state** of our program to see what is going on. This allows us to find and fix errors in our code. We'll set a breakpoint on the first line of code, line 13. Click on the '13' in the code shown in the Developer Tools, and it will be highlighted with a blue arrow:
 
-![Setting a breakpoint](img/browser-debugger-breakpoint.png)
+![Setting a breakpoint]({{ "/img/browser-debugger-breakpoint.png" | url}})
 
 We have now set a breakpoint - we have told our browser to pause our JavaScript code at this point so that we can examine it. Reload your page, and the browser will pause when it gets to this line of JavaScript:
 
-![Setting a breakpoint](img/browser-debugger-breakpoint-paused.png)
+![Setting a breakpoint]({{ "/img/browser-debugger-breakpoint-paused.png" | url}})
 
 We can now control how our browser executes our code, and **step through** the code line by line, or function by function. The debugger has a set of buttons that allow us to do this:
 
-![Setting a breakpoint](img/debugger-controls.png)
+![Setting a breakpoint]({{ "/img/debugger-controls.png" | url}})
 
--   ![Setting a breakpoint](img/play.png) The first blue 'play' icon () allows us to resume our code. Our code will continue to run, until we hit another breakpoint or reach the end of the script.
--   ![Setting a breakpoint](img/functions.png) The next three buttons (the curved arrow, the down arrow and the up arrow ) allow us to step over, in to and out of functions. We'll use these more as we start to look at functions in the coming weeks.
--   ![Setting a breakpoint](img/step-line.png) The last button, the arrow pointing to the right, is the control to step through our code one line at a time. This is the button we need to use right now.
+-   ![Setting a breakpoint]({{ "/img/play.png" | url}}) The first blue 'play' icon () allows us to resume our code. Our code will continue to run, until we hit another breakpoint or reach the end of the script.
+-   ![Setting a breakpoint]({{ "/img/functions.png" | url}}) The next three buttons (the curved arrow, the down arrow and the up arrow ) allow us to step over, in to and out of functions. We'll use these more as we start to look at functions in the coming weeks.
+-   ![Setting a breakpoint]({{ "/img/step-line.png" | url}}) The last button, the arrow pointing to the right, is the control to step through our code one line at a time. This is the button we need to use right now.
 
 Press the Step button once, and our first line of code will execute, and we'll see our prompt:
 
-![Setting a breakpoint](img/browser-prompt.png)
+![Setting a breakpoint]({{ "/img/browser-prompt.png" | url}})
 
 Enter the number 45 in the prompt, press OK, and we'll see the debugger updates our _state_ and moves on to the next line of code:
 
-![Setting a breakpoint](img/browser-post-prompt.png)
+![Setting a breakpoint]({{ "/img/browser-post-prompt.png" | url}})
 
 You can see that Line 14 of the code is now highlighted as the next line to be executed. The debugging pane on the right hand side of the window has also updated. In the 'Scope' section, you can see that we now have a local variable named `x` with a value of `"45"`. Press the step button again, and we'll run the next line of code. Again, a prompt will be shown. Enter 78 in this prompt, and click 'OK'. Our debugger state will be updated again:
 
-![Setting a breakpoint](img/post-two-prompts.png)
+![Setting a breakpoint]({{ "/img/post-two-prompts.png" | url}})
 
 Our 'Scope' section now has two local variables, `x` with a value of `"45"` and `y` with a value of `"78"`. Click the step button again. and our next line of code will be run, adding `x` and `y` together, and storing the result in the variable `z`:
 
-![Setting a breakpoint](img/answer-string.png)
+![Setting a breakpoint]({{ "/img/answer-string.png" | url}})
 
 The problem seems to be that our values are being stored as Strings. You can tell this by the fact that the values in the variables are wrapped in double quote (`"`) characters. When we try to add them together on line 15, rather than JavaScript performing numerical addition (and so adding 45 and 78 to get 123) it performs **string concatenation** and glues the two strings together, giving the result `"4578"`.
 
 We can test that this really is the problem by using the 'Watch' section of the debugging pane. This allows us to monitor variable values, but we can also enter JavaScript expressions here. Click the `+` in the Watch section to add a new Watch expression, and type `typeof z`. The debugger will report that the type of `z` is `string`, just as we suspected:
 
-![Setting a breakpoint](img/watch-expression.png)
+![Setting a breakpoint]({{ "/img/watch-expression.png" | url}})
 
 We can fix this code easily, by telling JavaScript to treat the values returned from the prompt as numbers (or Integers) rather than Strings. Edit lines 13 and 14 of your code:
 
@@ -93,7 +93,7 @@ second number?"));
 
 The `parseInt` function takes a string as input and attempts to convert it to an integer. Reload your page and step through its operation again, and this time you will see that the variables are treated as numbers rather than strings, and that our page delivers us the answer we expect at the end:
 
-![Setting a breakpoint](img/correct-answer.png)
+![Setting a breakpoint]({{ "/img/correct-answer.png" | url}})
 
 ### Coding in JavaScript
 
@@ -123,12 +123,12 @@ Create a new `index.html` for this next task:
     </head>
 
     <body>
-        <script src="week7-part1.js"></script>
+        <script src="week8-part1.js"></script>
     </body>
 </html>
 ```
 
-You should also create a JavaScript file in the same directory named `week7-part1.js`. This file will contain the JavaScript code we are working on (to begin with), and as you can see, we have already linked to this file in `index.html`. The contents of `week7-part1.js` should be:
+You should also create a JavaScript file in the same directory named `week8-part1.js`. This file will contain the JavaScript code we are working on (to begin with), and as you can see, we have already linked to this file in `index.html`. The contents of `week8-part1.js` should be:
 
 ```js
 console.log("it works!");
@@ -136,7 +136,7 @@ console.log("it works!");
 
 Open the page in a web browser and check the developer tools, and hopefully you should see the output in the console:
 
-![External JS](img/week6-begin.png)
+![External JS]({{ "/img/week6-begin.png" | url}})
 
 As we are working through this code, remember to use the debugger to check what is going on and to make sure you understand how the code is working.
 
@@ -157,7 +157,7 @@ Lets add some content to our page, and some styling. First, the body content:
         </nav>
     </header>
 
-    <script src="week7-part1.js"></script>
+    <script src="week8-part1.js"></script>
 </body>
 ```
 
@@ -219,14 +219,14 @@ nav > ul > li {
 
 That was quite a lot of code to get a basic layout so we can start to experiment with JavaScript events. It should create a page that looks a little something like this:
 
-![Starting Page](img/week6-page.png)
+![Starting Page]({{ "/img/week6-page.png" | url}})
 
 Lets add some event listeners to our page. We'll start by listening to events on the `nav` element. In `week7-part1.js`:
 
 ```js
 let nav_element = document.getElementsByTagName("nav")[0];
 
-nav_element.addEventListener("click", function() {
+nav_element.addEventListener("click", function () {
     console.log("nav clicked");
 });
 ```
@@ -239,7 +239,7 @@ Now let's add another listener to each of the list items in the `<ul>` inside th
 let list_items = document.getElementsByTagName("li");
 
 for (var i = 0; i < list_items.length; i++) {
-    list_items[i].addEventListener("click", function() {
+    list_items[i].addEventListener("click", function () {
         console.log("list item clicked");
     });
 }
@@ -247,7 +247,7 @@ for (var i = 0; i < list_items.length; i++) {
 
 Now when you click on an item in the nav bar you should see two pieces of output - one when the click event is registered by the `li` and one when it is registered by the `nav`.
 
-![Starting Page](img/week6-bubble.png)
+![Starting Page]({{ "/img/week6-bubble.png" | url}})
 
 You can see from the order of the output in the console that the `li` element gets to deal with the event first, then the `nav` element.
 
@@ -261,7 +261,7 @@ If you're not seeing the behaviour you expect, then most likely, you've modified
 
 ```js
 for (var i = 0; i < list_items.length; i++) {
-    list_items[i].addEventListener("click", function() {
+    list_items[i].addEventListener("click", function () {
         console.log("list item " + i + " clicked");
     });
 }
@@ -269,7 +269,7 @@ for (var i = 0; i < list_items.length; i++) {
 
 But this keeps printing out "list item 3 clicked" to the console whenever you click a list item:
 
-![Starting Page](img/week6-closure.png)
+![Starting Page]({{ "/img/week6-closure.png" | url}})
 
 This is because you have created a `closure` with your anonymous inner function. This function has access to all the variables that were in scope at the time of its creation. So, although we might expect `i` to only be in _scope_ during the execution of the for loop, JavaScript actually makes it available to our anonymous inner function (our event listener) later on too.
 
@@ -281,8 +281,8 @@ There are two solutions to this problem. One is to wrap our eventListener code i
 
 ```js
 for (var i = 0; i < list_items.length; i++) {
-    (function(i) {
-        list_items[i].addEventListener("click", function() {
+    (function (i) {
+        list_items[i].addEventListener("click", function () {
             console.log("list item " + i + " clicked");
         });
     })(i);
@@ -293,7 +293,7 @@ The simpler solution is just to use the `let` keyword for our `for` loop counter
 
 ```js
 for (let i = 0; i < list_items.length; i++) {
-    list_items[i].addEventListener("click", function() {
+    list_items[i].addEventListener("click", function () {
         console.log("list item " + i + " clicked");
     });
 }
@@ -317,7 +317,7 @@ And lets add some JavaScript that listens for the user pressing the 'Okay' butto
 
 ```js
 let okay_button = document.getElementById("okayButton");
-okay_button.addEventListener("click", function() {
+okay_button.addEventListener("click", function () {
     let nameTextBox = document.getElementById("nameTextField");
     console.log(nameTextBox.value);
 });
@@ -336,7 +336,7 @@ Now we can get the contents of the text box when the user clicks "Okay", lets ad
 
 ```js
 let okay_button = document.getElementById("okayButton");
-okay_button.addEventListener("click", function() {
+okay_button.addEventListener("click", function () {
     let nameTextBox = document.getElementById("nameTextField");
     let textValue = nameTextBox.value;
 
@@ -364,7 +364,7 @@ We've got the beginnings of a basic 'to-do list' application here, but it's very
 
 You should write a JavaScript program that allows a player to enter a number between 0 and 100 that the computer will then guess. The player should respond whether the guess is the same as the number (Yes), Higher or Lower. The game should loop and continue guessing and asking if the number is correct, until it gets it right.
 
-A template to be used as a starting point for this task can be found in the [cmt112-examples repository](https://gitlab.cs.cf.ac.uk/scm2mjc/cmt112-examples/blob/master/2-1/lab/guess.html).
+A template to be used as a starting point for this task can be found in the [repository here](https://github.com/martinjc/introduction-to-html-css-js/blob/main/src/examples/lab/guess.html).
 
 Try to break your program by giving the computer the wrong answer, or a nonsensical answer. Can you add more code to the program to make sure it can cope with these types of inputs? Use the debugger to see what is going wrong with the code when you supply the wrong answer or an answer that does not make sense.
 
