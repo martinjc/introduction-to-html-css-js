@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Practical Exercise: The JavaScript Debugger"
+title: "Practical Exercise: Forms, Events and the JavaScript Debugger"
 order: 4
 ---
 
