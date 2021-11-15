@@ -6,9 +6,9 @@ order: 2
 
 Now we'll look at responding to interaction events on our webpages using JavaScript
 
-{% panopto "1d41ed3b-a73b-4bfc-8356-acab0166e75a" %}
+{% panopto "2555dac1-22f3-428a-aeb8-ade100d9793d" %}
 
-{% panopto "45b788d3-fcdf-4968-b603-acac016d1801" %}
+{% panopto "7dd69e1b-e0eb-4a1f-a0a1-ade100d9778d" %}
 
 ## Reading
 

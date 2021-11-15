@@ -6,9 +6,9 @@ order: 1
 
 We'll now start to look at how a web browser builds a model of our HTML code in memory (the Document Object Model) and how APIs exist that allow us to manipulate that model to dynamically update our webpage while it is running within the web browser.
 
-{% panopto "53cc0550-655b-46d4-bacf-acab0166e72b" %}
+{% panopto "bdf90dd9-5a9e-4b3e-a220-ade100d979f3" %}
 
-{% panopto "9fddfd99-902e-4e75-916c-acac016d17d8" %}
+{% panopto "629b21cc-d3a8-4201-9d61-ade100d977fd" %}
 
 ## Reading
 
