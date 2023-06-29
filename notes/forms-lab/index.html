@@ -1,61 +1,72 @@
 <!doctype html>
 <html lang="en">
-    
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Practical Exercise: Forms, Events and the JavaScript Debugger</title>
-
-    <meta name="description" content="">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/introduction-to-html-css-js/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="/introduction-to-html-css-js/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/introduction-to-html-css-js/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="/introduction-to-html-css-js/site.webmanifest">
-    <meta name="theme-color" content="#d3374a">
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Practical Exercise: Forms, Events and the JavaScript Debugger">
-    <meta property="og:site_name" content="Introduction to Programming">
-    <meta property="og:locale" content="en_GB">
-    <meta property="article:author" content="Martin Chorley">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:creator" content="@martinjc">
-    <meta name="twitter:url" content="">
-    <meta name="twitter:title" content="Practical Exercise: Forms, Events and the JavaScript Debugger">
-
-    <link rel="icon" href="/introduction-to-html-css-js/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Scope+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/introduction-to-html-css-js/css/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism.css">
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practical Exercise: Forms, Events and the JavaScript Debugger</title>
+<meta name="description" content="">
+<link rel="apple-touch-icon" sizes="180x180" href="/introduction-to-html-css-js/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="/introduction-to-html-css-js/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/introduction-to-html-css-js/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/introduction-to-html-css-js/site.webmanifest">
+<meta name="theme-color" content="#d3374a">
+<meta property="og:url" content="">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Practical Exercise: Forms, Events and the JavaScript Debugger">
+<meta property="og:site_name" content="Introduction to Programming">
+<meta property="og:locale" content="en_GB">
+<meta property="article:author" content="Martin Chorley">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@martinjc">
+<meta name="twitter:url" content="">
+<meta name="twitter:title" content="Practical Exercise: Forms, Events and the JavaScript Debugger">
+<link rel="icon" href="/introduction-to-html-css-js/favicon.ico">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Scope+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/introduction-to-html-css-js/css/main.css">
+<link rel="stylesheet" href="https://unpkg.com/prismjs@1.20.0/themes/prism.css">
+<script async="async" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
   <body>
     <header>
 </header>
-    <header>
-    <h1> <a href="">
+    
+<header>
+    <h1>
+        <a href="">
             Practical Exercise: Forms, Events and the JavaScript Debugger
-        </a></h1>
+        </a>
+    </h1>
 </header>
-
 <div class="container">
     <nav class="sidebar">
-        <a href='/introduction-to-html-css-js/'>Home</a>
-        <ul><li><a href="/introduction-to-html-css-js/notes/dom/">The Document Object Model</a></li><li><a href="/introduction-to-html-css-js/notes/events/">Events</a></li><li><a href="/introduction-to-html-css-js/notes/forms/">Forms</a></li><li><a href="/introduction-to-html-css-js/notes/forms-lab/">Practical Exercise: Forms, Events and the JavaScript Debugger</a></li></ul>
-        <a href="/introduction-to-html-css-js/about/">About</a>
+        <ul><li><a href="/introduction-to-html-css-js/">Introduction to HTML, CSS and JS</a><ul><li><a href="/introduction-to-html-css-js/notes/dom/">The Document Object Model</a></li>
+<li><a href="/introduction-to-html-css-js/notes/events/">Events</a></li>
+<li><a href="/introduction-to-html-css-js/notes/forms/">Forms</a></li>
+<li><a href="/introduction-to-html-css-js/notes/forms-lab/">Practical Exercise: Forms, Events and the JavaScript Debugger</a></li></ul></li>
+<li><a href="/introduction-to-html-css-js/about/">About</a></li></ul>
     </nav>
-
     <div class="content">
+        
+        <nav class="breadcrumb">
+        <ul><li><a href="/introduction-to-html-css-js/">Introduction to HTML, CSS and JS</a></li></ul>
+        </nav>
+        
         <p>We are now going to start to look at dynamically updating our pages using JavaScript, reacting to JavaScript events, and capturing information from the User using Form elements. We will also learn how to use the built-in tools in our browser to monitor how our code executes, and how to debug problems.</p>
-<p>You will need to use Google Chrome for the coding exercises in this week’s lab sheet.</p>
+<div class="panel panel-[object Object]">
+<div class="panel-header">undefined</div>
+<div class="panel-body">
+You will need to use Google Chrome for the coding exercises in this week's lab sheet.
+</div>
+</div>
 <h3>JavaScript Debugging</h3>
 <p>Create an <code>index.html</code> file for this week in a text editor, and at the same time, open it in Google Chrome.</p>
-<p>You will also need the <code>Developer Tools</code> window open in Chrome</p>
+<div class="panel panel-[object Object]">
+<div class="panel-header">undefined</div>
+<div class="panel-body">
+You will also need the <code>Developer Tools</code> window open in Chrome
+</div>
+</div>
 <p>In the text editor, enter the following code for your index.html page:</p>
 <pre class="language-html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>width=device-width, initial-scale=1.0<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>JavaScript<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><br><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span><br>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><br>            <span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"I will add two numbers. What is the first number?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>            <span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token function">prompt</span><span class="token punctuation">(</span><span class="token string">"What is the second number?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><br>            <span class="token keyword">let</span> z <span class="token operator">=</span> x <span class="token operator">+</span> y<span class="token punctuation">;</span><br>            <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"The answer is: "</span> <span class="token operator">+</span> z<span class="token punctuation">)</span><span class="token punctuation">;</span><br>        </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <p>Reload the page, and enter a number in the prompt box when requested. Pay attention to the answer in the alert box. Is it what you expected?</p>
@@ -159,28 +170,49 @@
 <p>Try to break your program by giving the computer the wrong answer, or a nonsensical answer. Can you add more code to the program to make sure it can cope with these types of inputs? Use the debugger to see what is going wrong with the code when you supply the wrong answer or an answer that does not make sense.</p>
 <p>The basic template above using alerts and prompts. Can you modify the code to use form elements and to update the page dynamically with results and output?</p>
 
-        <div class="nextprev"><p class="previous">Previous: <a href="/introduction-to-html-css-js/notes/forms/">Forms</a></p>
+        <div class="nextprev">
+                <p class="previous">Previous:
+                    <a href="/introduction-to-html-css-js/notes/forms/">Forms</a>
+                </p>
+            
         </div>
         <div class="comments">
-            <script src="https://utteranc.es/client.js"
-            repo="martinjc/introduction-to-html-css-js"
-            issue-term="title"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-            </script>
+            <script src="https://utteranc.es/client.js" repo="martinjc/online-course-notes-11ty" issue-term="title" theme="github-light" crossorigin="anonymous" async></script>
         </div>
-        
     </div>
 </div>
-
 <script>
-document.querySelectorAll('.answer-block').forEach(d => {
-    d.addEventListener('click', (e) => {
-        d.querySelector('.feedback').classList.toggle('hidden');
-        d.classList.toggle('selected');
+    document.querySelectorAll('.answer-block').forEach(d => {
+        d.addEventListener('click', (e) => {
+            d
+                .querySelector('.feedback')
+                .classList
+                .toggle('hidden');
+            d.classList.toggle('selected');
+        });
     });
-});
+    const urlParams = new URLSearchParams(window.location.search);
+    const embed = urlParams.get('embed');
+    const print = urlParams.get('print');
+    if (embed || print) {
+        document.querySelectorAll('.comments').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.sidebar').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.breadcrumb').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.nextprev').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+    }
+    if(print) {
+        document.querySelectorAll('.panoptoembed').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+    }
 </script>
     
   </body>
