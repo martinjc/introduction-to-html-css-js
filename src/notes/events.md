@@ -2,6 +2,12 @@
 layout: page
 title: Events
 order: 2
+parent: Introduction to HTML, CSS and JS
+eleventyComputed:
+  eleventyNavigation:
+    key: "{{ title }}"
+    parent: "{{ parent }}"
+    order: "{{ order }}"
 ---
 
 Now we'll look at responding to interaction events on our webpages using JavaScript

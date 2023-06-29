@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+const Image = require('@11ty/eleventy-img');
 
 module.exports = {
     // Embedding questions from data files into the notes page template
@@ -26,7 +27,7 @@ module.exports = {
     // Alright, this one is going to get very little use unless you are also an academic at Cardiff University who wants to embed videos from our Panopto instance into your course notes...
     insertPanopto: (panoptoID) => {
         return `
-<iframe src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=${panoptoID}&v=1" width="720" height="405" style="padding: 0px; border: 1px solid #464646;" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+<div class="panoptoembed"><iframe src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=${panoptoID}&v=1" width="600" height="320" style="padding: 0px; border: 1px solid #464646;" frameborder="0" allowfullscreen allow="autoplay"></iframe></div>
 <p><small>If the embed above does not work here is a <a href="https://cardiff.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=${panoptoID}" target="blank">link to the full version of the video</a></small></p>`
     },
 
@@ -45,6 +46,24 @@ module.exports = {
 <div class="panel-body">${content}</div>
 </div>`
         return template;
+    },
+
+    imageShortcode: async function(src, alt="", sizes="(min-width: 30em) 30vw, 100vw") {
+        let metadata = await Image(src, {
+            widths: [640, 768, 1024, 1366, 1600, 1920],
+            formats: ["avif", "jpeg"],
+            outputDir: "./public/img/"
+        });
+
+        let imageAttributes = {
+            alt,
+            sizes,
+            loading: "lazy",
+            decoding: "async",
+        };
+
+        return Image.generateHTML(metadata, imageAttributes);
     }
 
 }
+

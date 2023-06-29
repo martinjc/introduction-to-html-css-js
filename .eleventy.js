@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
     const markdownItFootnote = require("markdown-it-footnote");
     const markdownItEmoji = require("markdown-it-emoji");
     const markdownIt = require("markdown-it");
+    const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
     // custom shortcodes go in this file
     const shortcodes = require("./build/shortcodes.js");
@@ -16,16 +17,16 @@ module.exports = function(eleventyConfig) {
     // are we building for production or development?
     const isProduction = process.env.NODE_ENV === `production`;
 
-    // copy our root files and images
+    // copy our root files
     eleventyConfig.addPassthroughCopy({"src/_root/*.*": "./"});
-    eleventyConfig.addPassthroughCopy("src/img");
     eleventyConfig.addPassthroughCopy("src/examples");
-    
+
     // who doesn't want this to be true at this point?
     eleventyConfig.setDataDeepMerge(true);
 
     // syntax highlighting
     eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
     // add footnotes and emoji to the markdown parser
     let markdownLib = markdownIt({
@@ -47,18 +48,19 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("sortByPageOrder", sortByPageOrder);
 
     // register our custom shortcodes
+    eleventyConfig.addShortcode("image", shortcodes.imageShortcode);
     eleventyConfig.addShortcode("questions", shortcodes.insertQuestions);
     eleventyConfig.addShortcode("panopto", shortcodes.insertPanopto);
     eleventyConfig.addShortcode("reponame", shortcodes.getRepoName);
     eleventyConfig.addPairedShortcode("panel", shortcodes.insertPanel);
 
-
     return {
       pathPrefix: isProduction ? PRODUCTION_DIR : '/',
       dir: {
-        input: "./src",      
+        input: "./src",
         output: "./public",
         includes: "_includes"
-      }
+      },
+      markdownTemplateEngine: "njk"
     };
 };

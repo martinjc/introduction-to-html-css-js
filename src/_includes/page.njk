@@ -1,49 +1,74 @@
 ---
 layout: base.njk
 ---
-<header>
-    <h1> <a href="{{ link }}">
-            {{ title }}
-        </a></h1>
-</header>
 
+<header>
+    <h1>
+        <a href="{{ link }}">
+            {{ title or eleventyNavigation.title }}
+        </a>
+    </h1>
+</header>
 <div class="container">
     <nav class="sidebar">
-        <a href='{{ "/" | url }}'>Home</a>
-        <ul>
-            {%- for note in collections.notes | sortByPageOrder -%}
-                <li><a href="{{ note.url | url }}">{{ note.data.title }}</a></li>
-            {%- endfor -%}
-        </ul>
-        <a href="{{ '/about/' | url }}">About</a>
+        {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
     </nav>
-
     <div class="content">
+        {% if eleventyNavigation and eleventyNavigation.parent %}
+        <nav class="breadcrumb">
+        {{ collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.parent, {includeSelf: true}) | eleventyNavigationToHtml | safe }}
+        </nav>
+        {% endif %}
         {{ content | safe }}
         <div class="nextprev">
-        {%- set nextPost = collections.notes | sortByPageOrder | getNextCollectionItem(page) %}
-        {%- if nextPost %}<p class="next">Next: <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a></p>{% endif %}
-        {%- set previousPost = collections.notes | sortByPageOrder | getPreviousCollectionItem(page) %}
-        {%- if previousPost %}<p class="previous">Previous: <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a></p>{% endif %}
+            {%- set nextPost = collections.notes | sortByPageOrder | getNextCollectionItem(page) %}
+            {%- if nextPost %}
+                <p class="next">Next:
+                    <a href="{{ nextPost.url | url }}">{{ nextPost.data.title }}</a>
+                </p>
+            {% endif %}
+            {%- set previousPost = collections.notes | sortByPageOrder | getPreviousCollectionItem(page) %}
+            {%- if previousPost %}
+                <p class="previous">Previous:
+                    <a href="{{ previousPost.url | url }}">{{ previousPost.data.title }}</a>
+                </p>
+            {% endif %}
         </div>
         <div class="comments">
-            <script src="https://utteranc.es/client.js"
-            repo="{% reponame pkg.repository.url %}"
-            issue-term="title"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-            </script>
+            <script src="https://utteranc.es/client.js" repo="{% reponame pkg.repository.url %}" issue-term="title" theme="github-light" crossorigin="anonymous" async></script>
         </div>
-        
     </div>
 </div>
-
 <script>
-document.querySelectorAll('.answer-block').forEach(d => {
-    d.addEventListener('click', (e) => {
-        d.querySelector('.feedback').classList.toggle('hidden');
-        d.classList.toggle('selected');
+    document.querySelectorAll('.answer-block').forEach(d => {
+        d.addEventListener('click', (e) => {
+            d
+                .querySelector('.feedback')
+                .classList
+                .toggle('hidden');
+            d.classList.toggle('selected');
+        });
     });
-});
+    const urlParams = new URLSearchParams(window.location.search);
+    const embed = urlParams.get('embed');
+    const print = urlParams.get('print');
+    if (embed || print) {
+        document.querySelectorAll('.comments').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.sidebar').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.breadcrumb').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.nextprev').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+    }
+    if(print) {
+        document.querySelectorAll('.panoptoembed').forEach(d => {
+            d.classList.toggle('hidden');
+        });
+    }
 </script>

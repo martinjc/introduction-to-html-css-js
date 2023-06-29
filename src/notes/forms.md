@@ -2,6 +2,12 @@
 layout: page
 title: Forms
 order: 3
+parent: Introduction to HTML, CSS and JS
+eleventyComputed:
+  eleventyNavigation:
+    key: "{{ title }}"
+    parent: "{{ parent }}"
+    order: "{{ order }}"
 ---
 
 Now we'll look at using HTML forms to allow users to input data into our websites, and later on we'll see some examples of how to get that data and use it in JavaScript

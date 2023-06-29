@@ -2,6 +2,12 @@
 layout: page
 title: The Document Object Model
 order: 1
+parent: Introduction to HTML, CSS and JS
+eleventyComputed:
+  eleventyNavigation:
+    key: "{{ title }}"
+    parent: "{{ parent }}"
+    order: "{{ order }}"
 ---
 
 We'll now start to look at how a web browser builds a model of our HTML code in memory (the Document Object Model) and how APIs exist that allow us to manipulate that model to dynamically update our webpage while it is running within the web browser.

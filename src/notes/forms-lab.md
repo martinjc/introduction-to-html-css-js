@@ -2,21 +2,27 @@
 layout: page
 title: "Practical Exercise: Forms, Events and the JavaScript Debugger"
 order: 4
+parent: Introduction to HTML, CSS and JS
+eleventyComputed:
+  eleventyNavigation:
+    key: "{{ title }}"
+    parent: "{{ parent }}"
+    order: "{{ order }}"
 ---
 
 We are now going to start to look at dynamically updating our pages using JavaScript, reacting to JavaScript events, and capturing information from the User using Form elements. We will also learn how to use the built-in tools in our browser to monitor how our code executes, and how to debug problems.
 
-{{% panel theme="warning" header="Use Chrome!" %}}
+{% panel theme="warning", header="Use Chrome!" %}
 You will need to use Google Chrome for the coding exercises in this week's lab sheet.
-{{% /panel %}}
+{% endpanel %}
 
 ### JavaScript Debugging
 
 Create an `index.html` file for this week in a text editor, and at the same time, open it in Google Chrome.
 
-{{% panel theme="warning" header="Use the Developer Tools!" %}}
+{% panel theme="warning", header="Use the Developer Tools!" %}
 You will also need the `Developer Tools` window open in Chrome
-{{% /panel %}}
+{% endpanel %}
 
 In the text editor, enter the following code for your index.html page:
 
